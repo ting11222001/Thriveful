@@ -73,3 +73,15 @@ doctors:
     "password": "1234"
 }
 ```
+
+## Adding Redis
+
+Caching - Store the result of a slow database query. Next time someone asks for the same data, return it from Redis instead of hitting the database again. Example: a list of all doctors on your Find a Doctor page.
+
+Rate limiting - What we are doing. Count how many times an IP hits an endpoint in a time window.
+
+Session storage - Store logged-in user data in Redis instead of a database, so checking "is this user logged in?" is faster.
+
+Job queues - A user uploads a file, you put a job in Redis, a background worker picks it up and processes it. The user does not wait.
+
+Real-time features - Redis has a pub/sub system. One part of your app publishes a message, another part receives it instantly. Used for live notifications and chat.
